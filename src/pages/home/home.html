@@ -1,14 +1,88 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content   class="background-home" padding>
+  <!--<h1 style="color: #18165A" align="center">BOARDING PASS!</h1>-->
+  <div class="boarding_pass">
+    <!--<img src="../../assets/imgs/boparding pass.png"/>-->
+    <!--<h1 style=" color: #868686;    margin-left: 22%">PICTURE PASS</h1>-->
+    <div class="fields">
+
+
+
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <!--<p>First Name<sup>*</sup></p>-->
+            <ion-input placeholder="Title" class="title" name= "first_name" [(ngModel)]="first_name"  type="text">
+              </ion-input>
+          </ion-col>
+          <ion-col>
+            <!--<p style="margin-left: -27%;">Last Name<sup>*</sup></p>-->
+            <ion-input placeholder="Name" class="name" name= "last_name" [(ngModel)]="last_name"  type="text">
+            </ion-input>
+          </ion-col>
+          <!--<ion-col>-->
+            <!--<img src="assets/imgs/logo.png" height="82" width="349" padding-left="5px"/>-->
+          <!--</ion-col>-->
+        </ion-row>
+      </ion-grid>
+
+
+
+      <ion-grid style=" margin-top: -4%" >
+        <ion-row>
+          <ion-col>
+            <!--<p>Email<sup>*</sup></p>-->
+            <ion-input placeholder="Phone Number" name="phone_number" [(ngModel)]="phone_number" class="phone_number" type="text">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid style=" margin-top: -4%" >
+        <ion-row>
+          <ion-col>
+            <!--<p>Phone Number<sup>*</sup></p>-->
+            <ion-input placeholder="Email" class="email " name= "email" [(ngModel)]="email"  type="text">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+    <button style="background: transparent;  margin-left: 30%;margin-top: 35%;width: 292px; height: 84px;" (click)="addDeveloper()" ion-button>   </button>
+  </div>
+  </div>
+    <!--<ion-item>-->
+      <!--<ion-label fixed="" style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0">Username</ion-label>-->
+      <!--<ion-input style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0" type="text" value=""></ion-input>-->
+    <!--</ion-item>-->
+
+    <!--<ion-item>-->
+      <!--<ion-label style="color: transparent"  fixed>Password</ion-label>-->
+      <!--<ion-input style="color: transparent" type="password"></ion-input>-->
+    <!--</ion-item>-->
+
 </ion-content>
+<!--<ion-content padding>-->
+  <!--<ion-item>-->
+    <!--<ion-label stacked>What's your name?</ion-label>-->
+    <!--<ion-input [(ngModel)]="developer.name" placeholder="Developer Name"></ion-input>-->
+  <!--</ion-item>-->
+  <!--<ion-item>-->
+    <!--<ion-label stacked>What's your special skill?</ion-label>-->
+    <!--<ion-input [(ngModel)]="developer.skill" placeholder="Special Skill"></ion-input>-->
+  <!--</ion-item>-->
+  <!--<ion-item>-->
+    <!--<ion-label stacked>How long have you been working?</ion-label>-->
+    <!--<ion-input [(ngModel)]="developer.yearsOfExperience" placeholder="Years of experience"></ion-input>-->
+  <!--</ion-item>-->
+  <!--<button ion-button full (click)="addDeveloper()">Add Developer Info</button>-->
+
+  <!--<ion-list>-->
+    <!--<ion-item *ngFor="let dev of developers">-->
+      <!--<h2>{{ dev.name }}</h2>-->
+      <!--<p>{{ dev.yearsOfExperience }} years of {{ dev.skill }} Experience!</p>-->
+    <!--</ion-item>-->
+  <!--</ion-list>-->
+<!--</ion-content>-->

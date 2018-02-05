@@ -1,0 +1,48 @@
+page-homescreen {
+
+    .background{
+      background: url("../assets/imgs/005.png") no-repeat center center;
+      background-size: cover;
+      background-position: 100% 100%;
+      background-attachment: fixed;
+    }
+  .take_refer {
+    background: transparent;
+    height: 88px;
+    margin-top: -4px;
+    width: 380px;
+    margin-left: -11px;
+  }
+    .enter_draw {
+      background: rgba(81,120,145,0.5);
+      margin-left: 36%;
+      width: 230px;
+    }
+    .refral{
+      margin-top: 37%;
+      margin-left: 30%;
+    }
+    .button_flight{
+      height: 88px;
+      width: 306px;
+    }
+    .shot {
+      margin-left: 27%;
+      margin-top: 47%;
+      /* width: 142px; */
+      /* height: 79%; */
+    }
+  .take_photo {
+    background: transparent;
+    height: 108px;
+    margin-top: 7px;
+    width: 521px;
+    margin-left: -8%;
+  }
+  .photo_shoot{
+    margin-left: 17%;
+    margin-top: 58px;
+    width: 61px;
+  }
+
+}

@@ -1,0 +1,48 @@
+page-cameratest {
+  .background{
+    background: url("../assets/imgs/picpage.png") no-repeat center center;
+    background-size: cover;
+    background-position: 100% 100%;
+    background-attachment: fixed;
+  }
+  .frame {
+    margin-left: 121px;
+    margin-top: 9px;
+    height: 69%;
+    position: absolute;
+  }
+  .countdownback{
+    height: 29%;
+    position: absolute;
+    margin-top: 26%;
+    margin-left: 29%;
+  }
+  .timer{
+    font-size: 90px;
+    color: #8F8054;
+    margin-top: 15%;
+    margin-left: -20px;
+  }
+  .welcome {
+
+    margin-top: 40%;
+    margin-left: 29%;
+    position: fixed;
+    font-size: 42px;
+    color: #18165A;
+
+  }
+  .counter_div{
+    background: url(../assets/imgs/countdown.png) no-repeat;
+    background-size: contain;
+    height: 250px;
+    width: 250px;
+    position: absolute;
+    tion: absolute;
+    margin: 45% 34%;
+    padding: 40px;
+  }
+}
+html, body, ion-app, ion-content, ion-page, .nav-decor {
+  background-color: transparent !important;
+}

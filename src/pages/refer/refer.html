@@ -1,0 +1,85 @@
+<!--
+  Generated template for the ReferPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!--<ion-header>-->
+<!--<ion-navbar>-->
+<!--<ion-title>-->
+<!--Ionic Blank-->
+<!--</ion-title>-->
+<!--</ion-navbar>-->
+<!--</ion-header>-->
+
+<ion-content  class="background" padding>
+  <img src="assets/imgs/logo.png"  height="82" width="349" padding-left="5px" style="margin-top:69px" />
+<!--<h1 style="color: #18165A" align="center">BOARDING PASS!</h1>-->
+<div class="boarding_pass">
+
+  <!--<img src="../../assets/imgs/boparding pass.png"/>-->
+  <!--<h1 style=" color: #868686;    margin-left: 22%">PICTURE PASS</h1>-->
+  <div class="fields">
+
+
+    <form #registerForm="ngForm">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <p style="margin-top: 7px; margin-left: 31%">Name<sup>*</sup></p>
+            <ion-input name= "name" [(ngModel)]="name" style="background-color:  rgba(215,209,193,0.5) ;width: 65%;height: 50%; " type="text">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid style=" margin-top: -4%" >
+        <ion-row>
+          <ion-col>
+            <p style="margin-top: 7px; padding-top: 12px; margin-left: 26%">Phone Number<sup>*</sup></p>
+            <ion-input name= "phone_number" [(ngModel)]="phone_number" style="background: rgba(215,209,193,0.5);width: 65%;height: 42%; " type="text">
+            </ion-input>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+
+      <button (click)="sendToServer()" style="background: rgba(81,120,145,0.5); margin-top: -3px;     margin-left: 27%;"  ion-button>SUBMIT</button>
+    </form>
+  </div>
+</div>
+</ion-content>
+<!--<ion-item>-->
+<!--<ion-label fixed="" style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0">Username</ion-label>-->
+<!--<ion-input style="color: black;background-color:  transparent;" class="label label-md" id="lbl-0" type="text" value=""></ion-input>-->
+<!--</ion-item>-->
+
+<!--<ion-item>-->
+<!--<ion-label style="color: transparent"  fixed>Password</ion-label>-->
+<!--<ion-input style="color: transparent" type="password"></ion-input>-->
+<!--</ion-item>-->
+
+
+<!--<ion-content padding>-->
+<!--<ion-item>-->
+<!--<ion-label stacked>What's your name?</ion-label>-->
+<!--<ion-input [(ngModel)]="developer.name" placeholder="Developer Name"></ion-input>-->
+<!--</ion-item>-->
+<!--<ion-item>-->
+<!--<ion-label stacked>What's your special skill?</ion-label>-->
+<!--<ion-input [(ngModel)]="developer.skill" placeholder="Special Skill"></ion-input>-->
+<!--</ion-item>-->
+<!--<ion-item>-->
+<!--<ion-label stacked>How long have you been working?</ion-label>-->
+<!--<ion-input [(ngModel)]="developer.yearsOfExperience" placeholder="Years of experience"></ion-input>-->
+<!--</ion-item>-->
+<!--<button ion-button full (click)="addDeveloper()">Add Developer Info</button>-->
+
+<!--<ion-list>-->
+<!--<ion-item *ngFor="let dev of developers">-->
+<!--<h2>{{ dev.name }}</h2>-->
+<!--<p>{{ dev.yearsOfExperience }} years of {{ dev.skill }} Experience!</p>-->
+<!--</ion-item>-->
+<!--</ion-list>-->
+<!--</ion-content>-->

@@ -1,3 +1,70 @@
 page-home {
+.background-home{
+  background: url("../assets/imgs/002.png") no-repeat center center;
+  background-size: cover;
+  background-position: 100% 100%;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+  //.boarding_pass{
+  //  margin: 0 auto;
+  //
+  //  background: url("../../assets/imgs/boparding pass.png") no-repeat center center;
+  //  height: 100%;
+  //  background-attachment: fixed;
+  //
+  //}
+  .fields{
+    margin-top: 38%;
+  }
+  //.boading_headng{
+  // padding-top: 31%;
+  //  color: #868686;
+  //  margin-left: 42px;
+  //}
+  //.boarding_pass {
+  //  margin: 0 auto;
+  //  //background: url("../assets/imgs/boparding pass.png") no-repeat;
+  //  height: 100%;
+  //  margin-top: 7%;
+  //}
+
+
+  .name {
+    position: fixed;
+    color: #000;
+    margin-left: 20px;
+    margin-top: -20px;
+  }
+  .title {
+    height: 33%;
+    position: fixed;
+    width: 55%;
+    color: #000;
+    margin-left: 383px;
+    margin-top: 26px;
+  }
+  .phone_number {
+    width: 65%;
+    position: fixed;
+    height: 32%;
+    color: #000;
+    margin-left: 384px;
+    margin-top: 82px;
+  }
+  .email {
+    position: fixed;
+    color: #000;
+    margin-top: 137px;
+    margin-left: 384px;
+  }
+  .button_submit{
+    background: transparent;
+    margin-left: 30%;
+    position: fixed;
+    margin-top: 101px;
+    width: 292px;
+    height: 84px;
+  }
 
 }

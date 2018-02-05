@@ -1,0 +1,38 @@
+<!--
+  Generated template for the OptionsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>options</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+  <ion-label floating>Username</ion-label>
+  <ion-input name= "username" [(ngModel)]="username" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input name= "password" [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Location</ion-label>
+    <ion-input name= "location" [(ngModel)]="location" type="text"></ion-input>
+  </ion-item>
+  <button (click)="authenticate()" ion-button icon-left>
+    <ion-icon name="ios-send"></ion-icon>
+    Submit Details
+  </button>
+  <button (click)="sync()" ion-button icon-only>
+    <ion-icon name="ios-sync"></ion-icon>
+  </button>
+</ion-content>

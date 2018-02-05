@@ -1,0 +1,34 @@
+page-refer {
+  .background{
+    background: url("../assets/imgs/Screensaver.png") no-repeat center center;
+    background-size: cover;
+    background-position: 100% 100%;
+    background-attachment: fixed;
+  }
+  //.boarding_pass{
+  //  margin: 0 auto;
+  //
+  //  background: url("../../assets/imgs/boparding pass.png") no-repeat center center;
+  //  height: 100%;
+  //  background-attachment: fixed;
+  //
+  //}
+  .fields{
+    padding-top: 62%;
+    margin-left: 88px;
+  }
+  .boading_headng{
+    padding-top: 31%;
+    color: #868686;
+    margin-left: 42px;
+  }
+  .boarding_pass {
+    background: url("../assets/imgs/flight.png") no-repeat;
+    height: 93%;
+    width: 90%;
+    margin-left: 12%;
+    background-size: contain;
+    /* align-content: center; */
+    margin-top: -14%;
+  }
+}
