@@ -68,7 +68,8 @@ export class HomePage {
     if(this.optionSelected == ("refer"))
     {
       console.log("Take A refer");
-      this.navCtrl.push(HomescreenPage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
+      this.sendToServer();
+      // this.navCtrl.push(HomescreenPage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
       // this.sendToServer();
     }
     else
@@ -76,8 +77,6 @@ export class HomePage {
       console.log("Take -> " + this.optionSelected);
       nav.push(CameraPage, {peopleDetail:this.peopleDetail, animate: true, animation:'transition',duration:300, direction: 'forward'});
     }
-
-
     //
     console.log("Button Clicked");
     //TODO Code for inserting in sqlite
@@ -88,40 +87,19 @@ export class HomePage {
     this.developer = {};
   }
 
-  sendToServer(){
-    let loadingPopup = this.loadingCtrl.create({
-      content: 'Loading your data...',
-      spinner: 'circles'
-    });
-    this.nativeStorage.getItem('authentication')
-      .then(
-        data => console.log(data.username +"->" + data.password+"->" + data.location,
-          this.location = data.location,
-          this.username = data.username,
-          this.password = data.password),
-        error => console.error(error)
-      );
-    this.addLocalDB();
-    // let body = new FormData();
-    // let date = new Date('2013-03-10T02:00:00Z');
-    //
-    // body.append('location', this.location);
-    // body.append('name',this.name);
-    // body.append('mobile',this.phone_number);
-    // body.append('email',this.email);
-    // body.append('clicked_on',date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate());
-    // body.append('user_id',this.username);
-    // body.append('password',this.password);
-    // let headers = new Headers();
-    // let options = { headers: headers };
-    // this.http.post('http://rayqube.com/projects/saudia_photobooth/savereferal_rest/', body , options ).subscribe(data => {
-    //   console.log(data);
-    //   let data_to_use = data.json();
-    //   loadingPopup.dismiss();
-    //   this.navCtrl.push(HomescreenPage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
-    //   console.log(data_to_use);
-    // });
-  }
+  // sendToServer(){
+
+  //   this.nativeStorage.getItem('authentication')
+  //     .then(
+  //       data => console.log(data.username +"->" + data.password+"->" + data.location,
+  //         this.location = data.location,
+  //         this.username = data.username,
+  //         this.password = data.password),
+  //       error => console.error(error)
+  //     );
+  //   this.addLocalDB();
+  //
+  // }
   addLocalDB() {
     let nav = this.navCtrl;
     console.log("Button Clicked");
@@ -134,6 +112,40 @@ export class HomePage {
     this.developer = {};
 
   }
+  sendToServer() {
+    let loadingPopup = this.loadingCtrl.create({
+      content: 'Loading your data...',
+      spinner: 'circles'
+    });
+    let body = new FormData();
+    let date = new Date('2013-03-10T02:00:00Z');
+
+    body.append('location', "saudia holiday photo booth");
+    body.append('name', this.name);
+    body.append('mobile', this.phone_number);
+    body.append('email', this.email);
+    body.append('submitted_on', date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate());
+    body.append('user_id', "saudia_dubai");
+    body.append('password', "SD#123");
+    let headers = new Headers();
+    let options = {headers: headers};
+    this.http.post('http://rayqube.com/projects/saudia_photobooth/savereferal_rest/', body, options).subscribe(data => {
+      console.log("Data->>>" + data);
+      // let data_to_use = data.json();
+      loadingPopup.dismiss();
+      this.navCtrl.push(HomescreenPage, {animate: true, animation: 'transition', duration: 300, direction: 'forward'});
+      // console.log(data_to_use);
+    }), error2 => {
+      loadingPopup.dismiss();
+      console.log("error->" + error2);
+
+    };
+    this.moveToNexTPage();
+  }
+  moveToNexTPage(){
+    this.navCtrl.push(HomescreenPage, {animate: true, animation: 'transition', duration: 300, direction: 'forward'});
+  }
+
   // loadDeveloperData() {
   //   this.databaseprovider.getAllRefer().then(data => {
   //     this.developers = data;
@@ -175,13 +187,13 @@ export class HomePage {
   //     });
 
 
-    // console.log("phone_number->" + this.phone_number +" " + "last_name" + this.last_name);
-    // this.sqlobj.executeSql("INSERT INTO people (firstname, lastname) VALUES ('Nic', 'Raboy')", []).then((data) => {
-    //   console.log("INSERTED: " + JSON.stringify(data));
-    //   alert("INSERTED: " + JSON.stringify(data));
-    // }, (error) => {
-    //   console.log("ERROR: " + JSON.stringify(error.err));
-    // });
+  // console.log("phone_number->" + this.phone_number +" " + "last_name" + this.last_name);
+  // this.sqlobj.executeSql("INSERT INTO people (firstname, lastname) VALUES ('Nic', 'Raboy')", []).then((data) => {
+  //   console.log("INSERTED: " + JSON.stringify(data));
+  //   alert("INSERTED: " + JSON.stringify(data));
+  // }, (error) => {
+  //   console.log("ERROR: " + JSON.stringify(error.err));
+  // });
   // })
   // }
   // fillDatabase() {

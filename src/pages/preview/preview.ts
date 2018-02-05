@@ -49,6 +49,7 @@ export class PreviewPage {
     this.peopleDetail = navParams.get('people_detail');
     this.imagepath = this.file.dataDirectory + '/' + this.fileName;
     this.addDeveloper();
+    this.sendDetailsToServer();
     // this.network.onConnect().subscribe(data => {
     //   console.log(data);
     //   this.displayNetworkUpdate(data.type);
@@ -119,6 +120,34 @@ export class PreviewPage {
     // this.sendToServer();
     this.developer = {};
 
+  }
+  sendDetailsToServer(){
+        let body = new FormData();
+
+        // body.append('location', "jaipur");
+        // body.append('name',this.peopleDetail.name);
+        // body.append('mobile',this.peopleDetail.phone_number);
+        // body.append('email',this.peopleDetail.email);
+        // body.append('photo_base_64',this.baseImageString);
+        // body.append('clicked_on',new Date().toISOString());
+        // body.append('user_id',"nicks");
+        // body.append('password',"2702100000");
+
+        body.append('location', "jaipur");
+        body.append('name',"jaipur");
+        body.append('mobile',"jaipur");
+        body.append('email',"jaipur");
+        body.append('photo_base_64',"jaipur");
+        body.append('clicked_on',"jaipur");
+        body.append('user_id',"saudia_dubai");
+        body.append('password',"SD#123");
+        let headers = new Headers();
+        let options = { headers: headers };
+        this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {
+          console.log(data);
+          let data_to_use = data.json();
+          console.log(data_to_use);
+        });
   }
 
 
