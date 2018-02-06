@@ -79,7 +79,7 @@ export class CameraPage {
 
   initTimer() {
     //Timer for 20 secs
-    if (!this.timeInSeconds) { this.timeInSeconds = 10; }
+    if (!this.timeInSeconds) { this.timeInSeconds = 20; }
 
     this.time = this.timeInSeconds;
     this.runTimer = false;
@@ -135,7 +135,7 @@ export class CameraPage {
     {
       this.show = false;
     }
-    else if(parseInt(secondsString)==9)
+    else if(parseInt(secondsString)==19)
     {
       this.startCamera();
       this.show = false;

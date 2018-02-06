@@ -62,7 +62,12 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-camera-preview": {},
-      "cordova-plugin-ios-camera-permissions": {},
+      "cordova-plugin-ios-camera-permissions": {
+        "CAMERA_USAGE_DESCRIPTION": "This app needs camera access",
+        "MICROPHONE_USAGE_DESCRIPTION": "This app needs microphone access",
+        "PHOTOLIBRARY_ADD_USAGE_DESCRIPTION": "This app needs write-access to photo library",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "This app needs read/write-access photo library access"
+      },
       "uk.co.workingedge.cordova.plugin.sqliteporter": {},
       "cordova-plugin-nativestorage": {},
       "cordova-plugin-x-toast": {},

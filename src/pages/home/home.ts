@@ -48,45 +48,55 @@ export class HomePage {
   // }
 
   addDeveloper() {
-    this.nativeStorage.getItem('authentication')
-      .then(
-        data => console.log(data.username +"->" + data.password+"->" + data.location,
-          this.location = data.location,
-          this.username = data.username,
-          this.password = data.password),
-        error => console.error(error)
-      );
-    let nav = this.navCtrl;
-    this.peopleDetail = {
-      location : this.location,
-      username : this.username,
-      password : this.password,
-      name : this.first_name +" "+ this.last_name,
-      email : this.email,
-      phone_number : this.phone_number
-    };
-    if(this.optionSelected == ("refer"))
-    {
-      console.log("Take A refer");
-      this.sendToServer();
-      // this.navCtrl.push(HomescreenPage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
-      // this.sendToServer();
+    let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(this.email)) {
+      // Invalid Email
+      alert("Email is not valid !!");
     }
-    else
-    {
-      console.log("Take -> " + this.optionSelected);
-      nav.push(CameraPage, {peopleDetail:this.peopleDetail, animate: true, animation:'transition',duration:300, direction: 'forward'});
+    else {
+      this.nativeStorage.getItem('authentication')
+        .then(
+          data => console.log(data.username + "->" + data.password + "->" + data.location,
+            this.location = data.location,
+            this.username = data.username,
+            this.password = data.password),
+          error => console.error(error)
+        );
+      let nav = this.navCtrl;
+      this.peopleDetail = {
+        location: this.location,
+        username: this.username,
+        password: this.password,
+        name: this.first_name + " " + this.last_name,
+        email: this.email,
+        phone_number: this.phone_number
+      };
+      if (this.optionSelected == ("refer")) {
+        console.log("Take A refer");
+        this.sendToServer();
+        // this.navCtrl.push(HomescreenPage, {animate: true, animation:'transition',duration:300, direction: 'forward'});
+        // this.sendToServer();
+      }
+      else {
+        console.log("Take -> " + this.optionSelected);
+        nav.push(CameraPage, {
+          peopleDetail: this.peopleDetail,
+          animate: true,
+          animation: 'transition',
+          duration: 300,
+          direction: 'forward'
+        });
+      }
+      //
+      console.log("Button Clicked");
+      //TODO Code for inserting in sqlite
+      this.databaseprovider.addDeveloper(this.first_name, this.last_name, this.phone_number, this.email)
+        .then(data => {
+          // this.loadDeveloperData();
+        });
+      this.developer = {};
     }
-    //
-    console.log("Button Clicked");
-    //TODO Code for inserting in sqlite
-    this.databaseprovider.addDeveloper(this.first_name,this.last_name,this.phone_number,this.email)
-      .then(data => {
-        // this.loadDeveloperData();
-      });
-    this.developer = {};
   }
-
   // sendToServer(){
 
   //   this.nativeStorage.getItem('authentication')
@@ -118,10 +128,10 @@ export class HomePage {
       spinner: 'circles'
     });
     let body = new FormData();
-    let date = new Date('2013-03-10T02:00:00Z');
+    let date = new Date(new Date().toISOString());
 
-    body.append('location', "saudia holiday photo booth");
-    body.append('name', this.name);
+    body.append('location', "Saudia holiday photo booth");
+    body.append('name', this.first_name + " " + this.last_name);
     body.append('mobile', this.phone_number);
     body.append('email', this.email);
     body.append('submitted_on', date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate());

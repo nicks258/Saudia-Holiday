@@ -132,22 +132,27 @@ export class PreviewPage {
         // body.append('clicked_on',new Date().toISOString());
         // body.append('user_id',"nicks");
         // body.append('password',"2702100000");
-
-        body.append('location', "jaipur");
-        body.append('name',"jaipur");
-        body.append('mobile',"jaipur");
-        body.append('email',"jaipur");
-        body.append('photo_base_64',"jaipur");
-        body.append('clicked_on',"jaipur");
+        let date = new Date(new Date().toISOString());
+        body.append('location', "Saudia holiday photo booth");
+        body.append('name',this.peopleDetail.name);
+        body.append('mobile',this.peopleDetail.phone_number);
+        body.append('email',this.peopleDetail.email);
+        body.append('photo_base_64',new Date().toISOString());
+        body.append('clicked_on',date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate());
         body.append('user_id',"saudia_dubai");
         body.append('password',"SD#123");
         let headers = new Headers();
+        headers.append("withCredentials","true");
         let options = { headers: headers };
         this.http.post('http://rayqube.com/projects/saudia_photobooth/saveclick_rest/', body , options ).subscribe(data => {
           console.log(data);
           let data_to_use = data.json();
           console.log(data_to_use);
-        });
+        }), error2 => {
+          // loadingPopup.dismiss();
+          console.log("error->" + error2);
+
+        };
   }
 
 
